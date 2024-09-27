@@ -17,8 +17,11 @@
 
 ## groovy
 
+```
 compile group: 'com.lianpay.globalpay', name:'globalpay-sdk', version:'0.0.5'
 compile group: 'org.apache.httpcomponents', name:'httpclient', version:'4.5.2'
+```
+
 
 
 Modifying Merchant Parameters
