@@ -133,7 +133,7 @@
                 <version>1.5</version>
                 <configuration>
                     <executable>/usr/local/bin/gpg</executable>
-                    <keyname>4C636488332EBF3D16C46A2E14A30D4CEF172209</keyname>
+                    <keyname>857B6AD61FBE2DFA86752982DAD34C0A46215D9E</keyname>
                 </configuration>
                 <executions>
                     <execution>
