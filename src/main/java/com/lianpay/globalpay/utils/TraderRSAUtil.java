@@ -30,11 +30,12 @@ public final class TraderRSAUtil {
     }
 
     /**
-     * 签名处理
+     * Generates a digital signature using the provided private key and content.
      *
-     * @param prikeyvalue：私钥
-     * @param sign_str：签名源内容
-     * @return
+     * @param prikeyvalue The private key used for signing.
+     * @param sign_str    The content to be signed.
+     * @return            The base64-encoded digital signature.
+     * @throws SignException If the signature generation fails.
      */
     public static String sign(String prikeyvalue, String sign_str) throws SignException {
         try {
@@ -104,12 +105,13 @@ public final class TraderRSAUtil {
     }
 
     /**
-     * 签名验证
+     * Verifies the signature using the provided public key, content, and signature string.
      *
-     * @param pubkeyvalue：公钥
-     * @param oid_str：内容
-     * @param signed_str：签名结果串
-     * @return
+     * @param pubkeyvalue The public key used for verification.
+     * @param oid_str     The content to be verified.
+     * @param signed_str  The signature string to be checked.
+     * @return            True if the signature is valid, false otherwise.
+     * @throws VerifySignFailException If the signature verification fails.
      */
     public static boolean checksign(String pubkeyvalue, String oid_str,
                                     String signed_str) throws VerifySignFailException {
