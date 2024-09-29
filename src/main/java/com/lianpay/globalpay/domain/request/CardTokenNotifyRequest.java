@@ -23,7 +23,7 @@ public class CardTokenNotifyRequest implements Serializable {
     private String merchantUserNo;
 
     @JsonProperty("card_token_data")
-    private CardTokenData card_token_data;
+    private CardTokenData cardTokenData;
 
     public String getEvent() {
         return event;
@@ -57,11 +57,11 @@ public class CardTokenNotifyRequest implements Serializable {
         this.merchantUserNo = merchantUserNo;
     }
 
-    public CardTokenData getCard_token_data() {
-        return card_token_data;
+    public CardTokenData getCardTokenData() {
+        return cardTokenData;
     }
 
-    public void setCard_token_data(CardTokenData card_token_data) {
-        this.card_token_data = card_token_data;
+    public void setCardTokenData(CardTokenData cardTokenData) {
+        this.cardTokenData = cardTokenData;
     }
 }

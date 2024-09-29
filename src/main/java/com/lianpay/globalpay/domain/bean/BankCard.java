@@ -11,101 +11,108 @@ import java.io.Serializable;
 public class BankCard implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
-     * 持卡人姓名
+     * The name of the cardholder.
      */
     @JsonProperty(value = "holder_name")
     private String holderName;
 
     /**
-     * 证件类型：CPF, CNPJ etc
+     * The type of identification: CPF, CNPJ, etc.
      */
     @JsonProperty(value = "id_type")
     private String idType;
 
     /**
-     * 证件号
+     * The identification number.
      */
     @JsonProperty(value = "id_no")
     private String idNo;
 
     /**
-     * 卡号
+     * The card number.
      */
     @JsonProperty(value = "card_no")
     private String cardNo;
 
     /**
-     * 卡类型：D=借记，C=贷记
-     *
-     * @see
+     * The card type: D=Debit, C=Credit.
      */
     @JsonProperty(value = "card_type")
     private String cardType;
 
     /**
-     * 银行编码
+     * The bank code.
      */
     @JsonProperty(value = "bank_code")
     private String bankCode;
 
     /**
-     * 信用卡卡品牌
+     * The credit card brand.
      */
     @JsonProperty(value = "card_brand")
     private String cardBrand;
 
     /**
-     * 卡有效期——年份
-     * 从2020年往后
+     * The card expiration year.
+     * Starts from 2020 onwards.
      */
     @JsonProperty(value = "card_expiration_year")
     private String cardExpirationYear;
 
     /**
-     * 卡有效期——月份
+     * The card expiration month.
      */
     @JsonProperty(value = "card_expiration_month")
     private String cardExpirationMonth;
 
     /**
-     * 卡安全码
+     * The card security code (CVV).
      */
     @JsonProperty(value = "cvv")
     private String cvv;
 
     /**
-     * 账单地址
+     * The billing address.
      */
     @JsonProperty(value = "billing_address")
     private Address billingAddress;
 
+    /**
+     * The bank name.
+     */
     @JsonProperty(value = "bank_name")
     private String bankName;
 
     /**
-     * 预留校验码
+     * The reserved verification digit.
      */
     @JsonProperty(value = "verifying_digit")
     private String verifyingDigit;
 
     /**
-     * 支行code
+     * The branch code.
      */
     @JsonProperty(value = "branch_code")
     private String branchCode;
 
-
     /**
-     *
+     * The email address.
      */
     @JsonProperty(value = "email")
     private String email;
 
+    /**
+     * The phone number.
+     */
     @JsonProperty(value = "phone_number")
     private String phoneNumber;
 
+    /**
+     * The card token.
+     */
     @JsonProperty(value = "card_token")
     private String cardToken;
+
 
     public String getHolderName() {
         return holderName;

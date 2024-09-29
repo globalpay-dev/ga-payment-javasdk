@@ -21,55 +21,86 @@ public class DigestUtil {
 
 
     /**
-     * HMAC-MD5 摘要算法
-     * @param msg
-     * @param secretKey
-     * @return
+     * Computes the HMAC-MD5 digest for a given message and secret key.
+     *
+     * @param msg        The message to be hashed.
+     * @param secretKey  The secret key used for hashing.
+     * @return           The Base64-encoded HMAC-MD5 digest.
+     * @throws UnsupportedEncodingException If the encoding is not supported.
+     * @throws NoSuchAlgorithmException If the specified algorithm is not available.
+     * @throws InvalidKeyException If the key is invalid.
      */
     public static String hmacMD5Digest(String msg, String secretKey) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         return hmacDigest(msg, secretKey, DIGEST_ALGORITHM_HMACMD5);
     }
 
     /**
-     * HMAC-SHA1 摘要算法
-     * @param msg
-     * @param secretKey
-     * @return
+     * Computes the HMAC-SHA1 digest for a given message and secret key.
+     *
+     * @param msg        The message to be hashed.
+     * @param secretKey  The secret key used for hashing.
+     * @return           The hexadecimal representation of the HMAC-SHA1 digest.
+     * @throws UnsupportedEncodingException If the encoding is not supported.
+     * @throws NoSuchAlgorithmException If the specified algorithm is not available.
+     * @throws InvalidKeyException If the key is invalid.
      */
     public static String hmacSHA1Digest(String msg, String secretKey) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         return hmacDigest(msg, secretKey, DIGEST_ALGORITHM_HMACSHA1);
     }
 
     /**
-     * HMAC-SHA256 摘要算法
-     * @param msg
-     * @param secretKey
-     * @return
+     * Computes the HMAC-SHA256 digest for a given message and secret key.
+     *
+     * @param msg        The message to be hashed.
+     * @param secretKey  The secret key used for hashing.
+     * @return           The hexadecimal representation of the HMAC-SHA256 digest.
+     * @throws UnsupportedEncodingException If the encoding is not supported.
+     * @throws NoSuchAlgorithmException If the specified algorithm is not available.
+     * @throws InvalidKeyException If the key is invalid.
      */
     public static String hmacSHA256Digest(String msg, String secretKey) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         return hmacDigest(msg, secretKey, DIGEST_ALGORITHM_HMAC256);
     }
 
     /**
-     * HMAC-SHA256 摘要算法
-     * @param msg
-     * @param secretKey
-     * @return base64编码
+     * Computes the HMAC-SHA256 digest for a given message and secret key and returns the result as a Base64-encoded string.
+     *
+     * @param msg        The message to be hashed.
+     * @param secretKey  The secret key used for hashing.
+     * @return           The Base64-encoded HMAC-SHA256 digest.
+     * @throws UnsupportedEncodingException If the encoding is not supported.
+     * @throws NoSuchAlgorithmException If the specified algorithm is not available.
+     * @throws InvalidKeyException If the key is invalid.
      */
     public static String hmacSHA256DigestWithBase64(String msg, String secretKey) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         return hmacDigestWithBase64(msg, secretKey, DIGEST_ALGORITHM_HMAC256);
     }
 
     /**
-     * HMAC-SHA512 摘要算法
-     * @param msg
-     * @param secretKey
-     * @return
+     * Computes the HMAC-SHA512 digest for a given message and secret key.
+     *
+     * @param msg        The message to be hashed.
+     * @param secretKey  The secret key used for hashing.
+     * @return           The hexadecimal representation of the HMAC-SHA512 digest.
+     * @throws UnsupportedEncodingException If the encoding is not supported.
+     * @throws NoSuchAlgorithmException If the specified algorithm is not available.
+     * @throws InvalidKeyException If the key is invalid.
      */
     public static String hmacSHA512Digest(String msg, String secretKey) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         return hmacDigest(msg, secretKey, DIGEST_ALGORITHM_HMAC512);
     }
 
+    /**
+     * Computes the HMAC digest for a given message, secret key, and algorithm.
+     *
+     * @param msg        The message to be hashed.
+     * @param secretKey  The secret key used for hashing.
+     * @param algorithm  The name of the HMAC algorithm (e.g., "HMACSHA256").
+     * @return           The hexadecimal representation of the HMAC digest.
+     * @throws UnsupportedEncodingException If the encoding is not supported.
+     * @throws NoSuchAlgorithmException If the specified algorithm is not available.
+     * @throws InvalidKeyException If the key is invalid.
+     */
     private static String hmacDigest(String msg, String secretKey, String algorithm) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         String digest = null;
         try {
