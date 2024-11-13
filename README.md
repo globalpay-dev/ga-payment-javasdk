@@ -251,3 +251,18 @@ public class RsaPairKeyTest {
     }
 }
 ```
+
+
+### Query Card Token Example
+```java
+public class MerchantQueryCardTokenTest {
+    private final MerchantPropertyReader merchant = new MerchantPropertyReader("/globalpay-merchant.properties");
+    private MerchantQueryTokenService merchantQueryTokenService = new MerchantQueryTokenService();
+
+    public void quertCardTokenTest() {
+        CardTokenRequest cardTokenRequest = generateCardTokenRequest();
+        // For details on Query card token, see: [https://doc.lianlianpay.com/doc-api/open-api/query-token](https://doc.lianlianpay.com/doc-api/open-api/query-token)
+        ApiResult<MerchantTokenResponse> iFrameTokenRes = merchantQueryTokenService.sendQueryCardTokenRequest(cardTokenRequest, merchant);
+    }
+}
+```

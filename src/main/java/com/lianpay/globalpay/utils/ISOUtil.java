@@ -67,6 +67,12 @@ public class ISOUtil {
     }
 
 
+    public static String getQueryTokenUrl(MerchantPropertyReader merchantPropertyReader) {
+        String host = getHost(merchantPropertyReader.openTestModel(),merchantPropertyReader.openHKNetModel());
+        return host + "/v3/merchants/" + merchantPropertyReader.getMERCHANT_ID() + "/queryCardToken";
+    }
+
+
     public static String getTokenUrl(MerchantPropertyReader merchantPropertyReader) {
         String host = getHost(merchantPropertyReader.openTestModel(),merchantPropertyReader.openHKNetModel());
         return host + "/v3/merchants/" + merchantPropertyReader.getMERCHANT_ID() + "/token";
