@@ -5,7 +5,7 @@
 <dependency>
     <groupId>com.lianpay.globalpay</groupId>
     <artifactId>globalpay-sdk</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 <dependency>
     <groupId>org.apache.httpcomponents</groupId>
@@ -18,7 +18,7 @@
 ## groovy
 
 ```
-compile group: 'com.lianpay.globalpay', name:'globalpay-sdk', version:'1.0.1'
+compile group: 'com.lianpay.globalpay', name:'globalpay-sdk', version:'1.0.2'
 compile group: 'org.apache.httpcomponents', name:'httpclient', version:'4.5.2'
 ```
 
