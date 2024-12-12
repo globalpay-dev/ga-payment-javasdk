@@ -43,7 +43,7 @@ public class IFrameTokenService extends BaseService {
         params.put("merchant_id", merchantPropertyReader.getMERCHANT_ID());
         params.put("timestamp", timestamp);
         String sign = SignUtil.addMapSign(params, merchantPrivateKey, merchantPropertyReader.getAlgorithm(), merchantPropertyReader.openDebuggerLog());
-        return generateHeaders(sign, timestamp, merchantPropertyReader.getSIGN_TYPE());
+        return generateHeaders(sign, timestamp, merchantPropertyReader.getSIGN_TYPE(), merchantPropertyReader.getAPI_VERSION());
     }
 
     private ApiResult<String> doSendIFrameTokenRequest(Map<String, String> headers, MerchantPropertyReader merchantPropertyReader)

@@ -45,7 +45,7 @@ public class RefundService extends BaseService {
     private ImmutablePair<Map<String,String>, RefundRequest> doGetRefundHeadersAndRequest(RefundRequest request, MerchantPropertyReader merchantPropertyReader) throws SignException {
         String merchantPrivateKey = merchantPropertyReader.getMERCHANT_SIGN_KEY();
         String sign = SignUtil.addJsonStringSign(JacksonUtils.toJsonString(request), merchantPrivateKey, merchantPropertyReader.getAlgorithm(), merchantPropertyReader.openDebuggerLog());
-        return ImmutablePair.of(generateHeaders(sign, merchantPropertyReader.getSIGN_TYPE()), request);
+        return ImmutablePair.of(generateHeaders(sign, merchantPropertyReader.getSIGN_TYPE(), merchantPropertyReader.getAPI_VERSION()), request);
     }
 
     public ApiResult<RefundResponse> doSendRefundRequest(Map<String,String> headers, RefundRequest request,

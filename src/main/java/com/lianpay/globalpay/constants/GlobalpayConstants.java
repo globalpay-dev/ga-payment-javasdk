@@ -21,7 +21,7 @@ public final class GlobalpayConstants {
     public static final String TDS_CHALLENGE = "challenge";
 
     public static final Map<String, String> GLOBALPAY_DEFAULT_HEADERS;
-
+    public static final String ACCEPT_VERSION = "accept-version";
     static {
         GLOBALPAY_DEFAULT_HEADERS = new HashMap<String, String>();
         GLOBALPAY_DEFAULT_HEADERS.put(SIGN_TYPE, "");

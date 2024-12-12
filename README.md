@@ -55,6 +55,9 @@ LL_SIGN_KEY=
 
 # ON / OFF
 HK_NET_MODEL=OFF
+
+# api version default 3
+API_VERSION=
 ```
 
 

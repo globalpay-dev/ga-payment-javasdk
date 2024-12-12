@@ -47,7 +47,7 @@ public class PaymentsService extends BaseService {
     private ImmutablePair<Map<String,String>, PaymentsRequest> doGetPaymentHeadersAndRequest(PaymentsRequest paymentsRequest, MerchantPropertyReader merchantPropertyReader) throws SignException {
         String merchantPrivateKey = merchantPropertyReader.getMERCHANT_SIGN_KEY();
         String sign = SignUtil.addJsonStringSign(JacksonUtils.toJsonString(paymentsRequest), merchantPrivateKey, merchantPropertyReader.getAlgorithm(), merchantPropertyReader.openDebuggerLog());
-        return ImmutablePair.of(generateHeaders(sign, merchantPropertyReader.getSIGN_TYPE()), paymentsRequest);
+        return ImmutablePair.of(generateHeaders(sign, merchantPropertyReader.getSIGN_TYPE(), merchantPropertyReader.getAPI_VERSION()), paymentsRequest);
     }
 
     public ApiResult<PaymentsResponse> doSendPaymentRequest(Map<String,String> headers, PaymentsRequest paymentsRequest,

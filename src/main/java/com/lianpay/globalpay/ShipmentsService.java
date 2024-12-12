@@ -44,7 +44,7 @@ public class ShipmentsService extends BaseService {
     private ImmutablePair<Map<String, String>, ShipmentRequest> doGetShipmentHeadersAndRequest(ShipmentRequest request, MerchantPropertyReader merchantPropertyReader) throws SignException {
         String merchantPrivateKey = merchantPropertyReader.getMERCHANT_SIGN_KEY();
         String sign = SignUtil.addJsonStringSign(JacksonUtils.toJsonString(request), merchantPrivateKey, merchantPropertyReader.getAlgorithm(), merchantPropertyReader.openDebuggerLog());
-        return ImmutablePair.of(generateHeaders(sign, merchantPropertyReader.getSIGN_TYPE()), request);
+        return ImmutablePair.of(generateHeaders(sign, merchantPropertyReader.getSIGN_TYPE(), merchantPropertyReader.getAPI_VERSION()), request);
     }
 
     public ApiResult<?> doSendShipmentRequest(Map<String,String> headers, ShipmentRequest shipmentRequest,

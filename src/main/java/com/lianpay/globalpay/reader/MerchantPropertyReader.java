@@ -22,7 +22,7 @@ public class MerchantPropertyReader {
     private String SIGN_TYPE = AlgorithmEnum.RSA.name();
     private String MERCHANT_SIGN_KEY;
     private String LL_SIGN_KEY;
-
+    private String API_VERSION;
     private String HK_NET_MODEL= GlobalpayConstants.STRING_OFF;
 
     public MerchantPropertyReader() {
@@ -59,6 +59,10 @@ public class MerchantPropertyReader {
         setMERCHANT_SIGN_KEY(this.clientProps.getProperty("MERCHANT_SIGN_KEY", ISOUtil.EMPTY_STRING).trim());
         setLL_SIGN_KEY(this.clientProps.getProperty("LL_SIGN_KEY", ISOUtil.EMPTY_STRING).trim());
         setHK_NET_MODEL(this.clientProps.getProperty("HK_NET_MODEL", GlobalpayConstants.STRING_OFF).trim());
+        String apiVersion = this.clientProps.getProperty("API_VERSION", ISOUtil.EMPTY_STRING);
+        if(apiVersion != null && !"".equals(apiVersion.trim())){
+            setAPI_VERSION(apiVersion.trim());
+        }
     }
 
     public Boolean openDebuggerLog() {
@@ -139,6 +143,14 @@ public class MerchantPropertyReader {
 
     public void setHK_NET_MODEL(String HK_NET_MODEL) {
         this.HK_NET_MODEL = HK_NET_MODEL;
+    }
+
+    public String getAPI_VERSION() {
+        return API_VERSION;
+    }
+
+    public void setAPI_VERSION(String API_VERSION) {
+        this.API_VERSION = API_VERSION;
     }
 
     public ParamValidateRes checkPropertyParams() {
