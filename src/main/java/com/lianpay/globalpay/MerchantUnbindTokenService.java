@@ -47,7 +47,7 @@ public class MerchantUnbindTokenService extends BaseService{
     private ImmutablePair<Map<String,String>, CardTokenRequest> doGetPaymentHeadersAndRequest(CardTokenRequest cardTokenRequest, MerchantPropertyReader merchantPropertyReader) throws SignException {
         String merchantPrivateKey = merchantPropertyReader.getMERCHANT_SIGN_KEY();
         String sign = SignUtil.addJsonStringSign(JacksonUtils.toJsonString(cardTokenRequest), merchantPrivateKey, merchantPropertyReader.getAlgorithm(), merchantPropertyReader.openDebuggerLog());
-        return ImmutablePair.of(generateHeaders(sign, merchantPropertyReader.getSIGN_TYPE()), cardTokenRequest);
+        return ImmutablePair.of(generateHeaders(sign, merchantPropertyReader.getSIGN_TYPE(), merchantPropertyReader.getAPI_VERSION()), cardTokenRequest);
     }
 
     public ApiResult<?> doSendPaymentRequest(Map<String,String> headers, CardTokenRequest cardTokenRequest,
