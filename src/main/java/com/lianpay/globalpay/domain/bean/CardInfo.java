@@ -43,6 +43,9 @@ public class CardInfo implements Serializable {
     @JsonProperty("card_token")
     private String cardToken;
 
+    @JsonProperty("email")
+    private String email;
+
     public String getHolderName() {
         return holderName;
     }
@@ -137,5 +140,13 @@ public class CardInfo implements Serializable {
 
     public void setCardToken(String cardToken) {
         this.cardToken = cardToken;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

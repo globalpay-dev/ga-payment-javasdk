@@ -39,6 +39,9 @@ public class Customer implements Serializable {
 	@JsonProperty("address")
     private Address address;
 
+    @JsonProperty("open_id")
+    private String openId;
+
     public String getCustomerType() {
         return customerType;
     }
@@ -125,5 +128,13 @@ public class Customer implements Serializable {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 }
