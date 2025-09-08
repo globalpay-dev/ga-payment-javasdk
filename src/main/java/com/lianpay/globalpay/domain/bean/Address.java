@@ -28,6 +28,18 @@ public class Address implements Serializable {
     @JsonProperty("house_number")
 	private String houseNumber;
 
+
+    @JsonProperty("district")
+    private String district;
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
     public String getHouseNumber() {
         return houseNumber;
     }
