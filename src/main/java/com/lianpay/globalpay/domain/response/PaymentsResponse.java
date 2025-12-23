@@ -19,7 +19,18 @@ public class PaymentsResponse implements Serializable {
     private String qrcode;
 	@JsonProperty("payment_data")
     private PaymentResponsePaymentData paymentData;
-    
+
+    @JsonProperty("ext_info")
+    private String extInfo;
+
+    public String getExtInfo() {
+        return extInfo;
+    }
+
+    public void setExtInfo(String extInfo) {
+        this.extInfo = extInfo;
+    }
+
     public String getLlTransactionId() {
         return llTransactionId;
     }
