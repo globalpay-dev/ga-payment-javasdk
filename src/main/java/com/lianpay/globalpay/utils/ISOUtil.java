@@ -31,6 +31,11 @@ public class ISOUtil {
         return host + "/v3/merchants/" + merchantPropertyReader.getMERCHANT_ID() + "/payments/" + merchantTransactionId;
     }
 
+    public static String getPaymentsQueryByPostUrl(MerchantPropertyReader merchantPropertyReader) {
+        String host = getHost(merchantPropertyReader.openTestModel(),merchantPropertyReader.openHKNetModel());
+        return host + "/v3/merchants/" + merchantPropertyReader.getMERCHANT_ID() + "/payments/query";
+    }
+
     public static String getRefundsUrl(String originalMerchantTransactionId,
                                        MerchantPropertyReader merchantPropertyReader) {
         String host = getHost(merchantPropertyReader.openTestModel(),merchantPropertyReader.openHKNetModel());
