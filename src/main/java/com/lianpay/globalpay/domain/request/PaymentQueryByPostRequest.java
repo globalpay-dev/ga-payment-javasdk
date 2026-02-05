@@ -29,6 +29,17 @@ public class PaymentQueryByPostRequest implements Serializable {
     @JsonProperty("arn")
     private String arn;
 
+    @JsonProperty("sub_merchant_id")
+    private String subMerchantId;
+
+    public String getSubMerchantId() {
+        return subMerchantId;
+    }
+
+    public void setSubMerchantId(String subMerchantId) {
+        this.subMerchantId = subMerchantId;
+    }
+
     public String getMerchantId() {
         return merchantId;
     }

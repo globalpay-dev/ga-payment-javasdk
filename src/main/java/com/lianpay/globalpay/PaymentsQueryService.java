@@ -59,12 +59,12 @@ public class PaymentsQueryService extends BaseService {
      * @throws HttpClientException HTTP客户端异常
      */
     public ApiResult<PaymentsResponse> sendPaymentQueryByPostRequest(PaymentQueryByPostRequest queryRequest,
-                                                                      MerchantPropertyReader merchantPropertyReader)
+                                                                      MerchantPropertyReader merchantPropertyReader,String verison)
             throws ParamCheckFailException, SignException, VerifySignFailException, HttpClientException {
         checkPayQueryByPostRequestParamsWithException(queryRequest, merchantPropertyReader);
         ImmutablePair<Map<String, String>, PaymentQueryByPostRequest> headersAndRequest = 
                 getPaymentQueryByPostHeadersAndRequest(queryRequest, merchantPropertyReader);
-        return doSendPaymentQueryByPostRequest(headersAndRequest.getLeft(), headersAndRequest.getRight(), merchantPropertyReader);
+        return doSendPaymentQueryByPostRequest(headersAndRequest.getLeft(), headersAndRequest.getRight(), merchantPropertyReader,verison);
     }
 
     /**
@@ -104,8 +104,9 @@ public class PaymentsQueryService extends BaseService {
      */
     public ApiResult<PaymentsResponse> doSendPaymentQueryByPostRequest(Map<String, String> headers,
                                                                         PaymentQueryByPostRequest queryRequest,
-                                                                        MerchantPropertyReader merchantPropertyReader)
+                                                                        MerchantPropertyReader merchantPropertyReader,String version)
             throws VerifySignFailException, HttpClientException {
+        headers.put("accept-version",version);
         String url = ISOUtil.getPaymentsQueryByPostUrl(merchantPropertyReader);
         HttpClient.HttpClientResponse httpClientResponse = DefaultHttpClient.httpClientHolder.postJsonRequestNew(
                 url, JacksonUtils.toJsonString(queryRequest), headers, merchantPropertyReader.openDebuggerLog());
