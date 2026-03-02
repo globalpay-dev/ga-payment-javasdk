@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class GlobalpayConstants {
-    public static final String TEST_HOST = "https://celer-api.LianLianpay-inc.com";
+    public static final String TEST_HOST = "https://celer-api.LianLianpay-inc.com/qa/";
     public static final String PROD_HOST = "https://gpapi.LianLianpay.com";
 
     public static final String HK_PROD_HOST = "https://gpapi-hk.LianLianpay.com";
