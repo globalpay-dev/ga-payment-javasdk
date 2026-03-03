@@ -28,6 +28,9 @@ public class ApiResult<T extends Serializable> implements Serializable {
     @JsonProperty(value = "decline_code")
     private String declineCode;
 
+    @JsonProperty(value = "decline_message")
+    private String declineMessage;
+
     /**
      * 调用链ID, 用于定位问题
      */

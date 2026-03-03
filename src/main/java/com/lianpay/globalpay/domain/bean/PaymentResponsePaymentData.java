@@ -43,6 +43,49 @@ public class PaymentResponsePaymentData implements Serializable {
     @JsonProperty("card_country")
     private String cardCountry;
 
+    @JsonProperty("payment_type")
+    private String paymentType;
+
+    @JsonProperty("arn")
+    private String arn;
+
+    @JsonProperty("actual_payment_amount")
+    private String actualPaymentAmount;
+
+    @JsonProperty("actual_payment_currency")
+    private String actualPaymentCurrency;
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public String getArn() {
+        return arn;
+    }
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    public String getActualPaymentAmount() {
+        return actualPaymentAmount;
+    }
+
+    public void setActualPaymentAmount(String actualPaymentAmount) {
+        this.actualPaymentAmount = actualPaymentAmount;
+    }
+
+    public String getActualPaymentCurrency() {
+        return actualPaymentCurrency;
+    }
+
+    public void setActualPaymentCurrency(String actualPaymentCurrency) {
+        this.actualPaymentCurrency = actualPaymentCurrency;
+    }
 
     public String getCardNo() {
         return cardNo;

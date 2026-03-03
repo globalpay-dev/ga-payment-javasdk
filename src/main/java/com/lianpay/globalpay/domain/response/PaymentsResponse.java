@@ -13,10 +13,9 @@ public class PaymentsResponse implements Serializable {
     private String merchantTransactionId;
 	@JsonProperty("payment_url")
     private String paymentUrl;
-    @JsonProperty("3ds_status")
-	private String tdsStatus;
-    @JsonProperty("qrcode")
-    private String qrcode;
+
+    @JsonProperty("tds_flag")
+    private String tdsFlag;
 	@JsonProperty("payment_data")
     private PaymentResponsePaymentData paymentData;
 
@@ -63,19 +62,4 @@ public class PaymentsResponse implements Serializable {
         this.paymentData = paymentData;
     }
 
-    public String getTdsStatus() {
-        return tdsStatus;
-    }
-
-    public void setTdsStatus(String tdsStatus) {
-        this.tdsStatus = tdsStatus;
-    }
-
-    public String getQrcode() {
-        return qrcode;
-    }
-
-    public void setQrcode(String qrcode) {
-        this.qrcode = qrcode;
-    }
 }
