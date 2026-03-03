@@ -1,25 +1,18 @@
 # GlobalPay SDK for International Payment
 
 ## Maven Dependencies
-```
+```xml
 <dependency>
-    <groupId>com.lianpay.globalpay</groupId>
+    <groupId>io.github.globalpay-dev</groupId>
     <artifactId>globalpay-sdk</artifactId>
-    <version>1.0.4</version>
-</dependency>
-<dependency>
-    <groupId>org.apache.httpcomponents</groupId>
-    <artifactId>httpclient</artifactId>
-    <version>4.5.2</version>
+    <version>1.0.6</version>
 </dependency>
 ```
 
+## Gradle
 
-## groovy
-
-```
-compile group: 'com.lianpay.globalpay', name:'globalpay-sdk', version:'1.0.2'
-compile group: 'org.apache.httpcomponents', name:'httpclient', version:'4.5.2'
+```groovy
+implementation 'io.github.globalpay-dev:globalpay-sdk:1.0.6'
 ```
 
 
@@ -92,7 +85,7 @@ public class RefundTest {
 }
 ```
 
-### Payment Result Query Example
+### Payment Result Query Example (GET Method)
 ```java
 public class PaymentsQueryTest {
     private final MerchantPropertyReader merchant = new MerchantPropertyReader("/globalpay-merchant.properties");
@@ -102,6 +95,33 @@ public class PaymentsQueryTest {
         // For detailed information on the payment query interface, see: [https://doc.lianlianpay.com/doc-api/open-api/pay-result](https://doc.lianlianpay.com/doc-api/open-api/pay-result)
         String merchantTransactionId = "";
         ApiResult<PaymentsResponse> payResponseApiResult = paymentsQueryService.sendPaymentQueryRequest(merchantTransactionId, merchant);
+    }
+}
+```
+
+### Payment Result Query Example (POST Method - Support ARN Query)
+```java
+public class PaymentsQueryByPostTest {
+    private final MerchantPropertyReader merchant = new MerchantPropertyReader("/globalpay-merchant.properties");
+    private final PaymentsQueryService paymentsQueryService = new PaymentsQueryService();
+
+    public void testPaymentsQueryByPost() {
+        // For detailed information on the payment query interface (POST method), see: [https://doc.lianlianpay.com/doc-api/open-api/pay-result](https://doc.lianlianpay.com/doc-api/open-api/pay-result)
+        PaymentQueryByPostRequest queryRequest = new PaymentQueryByPostRequest();
+        
+        // Query by merchant transaction ID
+        queryRequest.setMerchantTransactionId("your_merchant_transaction_id");
+        
+        // Or query by ARN (Acquirer Reference Number)
+        // queryRequest.setArn("your_arn_number");
+        
+        // Optional: Set sub-merchant ID if applicable
+        // queryRequest.setSubMerchantId("your_sub_merchant_id");
+        
+        // Set API version (e.g., "1.0")
+        String version = "1.0";
+        
+        ApiResult<PaymentsResponse> payResponseApiResult = paymentsQueryService.sendPaymentQueryByPostRequest(queryRequest, merchant, version);
     }
 }
 ```
