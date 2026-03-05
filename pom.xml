@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.globalpay-dev</groupId>
     <artifactId>globalpay-sdk</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.6</version>
     <packaging>jar</packaging>
     <name>globalpay sdk</name>
     <url>https://github.com/globalpay-dev/ga-payment-javasdk</url>
@@ -120,8 +120,8 @@
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.5</version>
                 <configuration>
-                    <executable>/usr/local/bin/gpg</executable>
-                    <keyname>3F8875AE2755421B222B99B74799A0F246358B29</keyname>
+                    <executable>gpg</executable>
+                    <keyname>454E0C54B44DD78FBA300E7C99FE7DDB14C6C5FF</keyname>
                 </configuration>
                 <executions>
                     <execution>
