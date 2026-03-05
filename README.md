@@ -5,7 +5,7 @@
 <dependency>
     <groupId>io.github.globalpay-dev</groupId>
     <artifactId>globalpay-sdk</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 </dependency>
 ```
 
