@@ -30,8 +30,8 @@ public class LocalTest {
         PaymentQueryByPostRequest postRequest = new PaymentQueryByPostRequest();
         postRequest.setMerchantTransactionId("17695008566416600");
         postRequest.setMerchantId("999000000000000000");
-        postRequest.setArn("72715923069164178711511");
-        ApiResult<PaymentsResponse> result = localTest.paymentsQueryService.sendPaymentQueryByPostRequest(postRequest, merchantPropertyReader,"3.3");
+        //postRequest.setArn("72715923069164178711511");
+        ApiResult<PaymentsResponse> result = localTest.paymentsQueryService.sendPaymentQueryByPostRequest(postRequest, merchantPropertyReader,"3.2");
         System.out.println(JacksonUtils.toJsonString(result));
 
     }

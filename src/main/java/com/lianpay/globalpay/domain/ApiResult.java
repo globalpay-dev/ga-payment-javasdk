@@ -43,6 +43,18 @@ public class ApiResult<T extends Serializable> implements Serializable {
     @JsonProperty(value = "order")
     private T order;
 
+
+    @JsonProperty(value = "decline_msg")
+    private String declineMsg;
+
+    public String getDeclineMsg() {
+        return declineMsg;
+    }
+
+    public void setDeclineMsg(String declineMsg) {
+        this.declineMsg = declineMsg;
+    }
+
     public String getReturnCode() {
         return returnCode;
     }
