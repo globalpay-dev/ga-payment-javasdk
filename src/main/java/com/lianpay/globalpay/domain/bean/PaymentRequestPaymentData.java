@@ -29,6 +29,17 @@ public class PaymentRequestPaymentData implements Serializable {
 	@JsonProperty("card")
     private CardInfo card;
 
+    @JsonProperty("auth_code")
+    private String authCode;
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode;
+    }
+
     public String getPaymentCurrencyCode() {
         return paymentCurrencyCode;
     }

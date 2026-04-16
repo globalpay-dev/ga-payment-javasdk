@@ -55,6 +55,20 @@ public class PaymentResponsePaymentData implements Serializable {
     @JsonProperty("actual_payment_currency")
     private String actualPaymentCurrency;
 
+    @JsonProperty("holder_name")
+    private String holderName;
+
+
+
+    public String getHolderName() {
+        return holderName;
+    }
+
+    public void setHolderName(String holderName) {
+        this.holderName = holderName;
+    }
+
+
     public String getPaymentType() {
         return paymentType;
     }
